@@ -9,13 +9,9 @@ body, html {
     height: 100%;
 }
 
-body {
-    overflow-y: scroll;
-}
-
 .city-heading {
     background-color: blue;
-    height: 80%;
+    height: 60%;
 }
 
 #discord-btn {
@@ -48,8 +44,85 @@ body {
     bottom: 0;
     right:  2%;
     width: 55%;
-    height: 22%;
-    background-color: gray;
+    height: 32%;
+}
+.base1, .base2, .base3 {
+    position: absolute;
+    height: 7%;
+    background-color: black;
+    border-top: 2px solid white;
+}
+.base1 {
+    width: 100%;
+    height: 7%;
+    bottom: 0;
+}
+.base2 {
+    width: 95%;
+    bottom: 7%;
+    left: 2.5%;
+}
+.base3 {
+    width: 90%;
+    bottom: 14%;
+    left: 5%;
+}
+.columns {
+    display: flex;
+    justify-content: space-between;  /* ← evenly space columns */
+    align-items: flex-end;
+    height: 80%;
+    width: 100%;
+    bottom: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.column {
+    position: relative;
+    width: 7%;
+    height: 68.8%;
+    background-color: black;
+    background: repeating-linear-gradient(
+        to right,
+        #b1b0b0 0px,
+        #e0e0e0 1px,
+        #d0d0d0 2px
+    );
+    border: 2px solid black;
+    border-top: none;
+    z-index: 2;
+}
+.column-backdrop {
+    position: absolute;
+    width: 84%;
+    height: 55.5%;
+    left: 5%;
+    bottom: 20%;
+    background-color: black;
+    z-index: 1;
+}
+/* Black border behind the pediment */
+.pediment-border {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: 93%;
+    height: 25%;
+    background-color: black;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 1;
+}
+
+/* Main pediment, slightly smaller to show the border */
+.pediment {
+    position: absolute;
+    top: 3px;             /* push down 3px */
+    left: calc(4% + 3px); /* move right 3px */
+    width: calc(93% - 6px); /* shrink width by 3px on each side */
+    height: calc(25% - 3px); /* shrink height by 3px */
+    background-color: #c1b8b8;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 2;
 }
 
 #main-body {
@@ -98,7 +171,6 @@ body {
     font-size: 20px;
 }
 #welcome {
-    min-height: 500px;
     margin-top: 15px;
 }
 .heading{
@@ -108,12 +180,10 @@ body {
 .center {
     text-align: center;
 }
-#discord {
-    height: 300px;
-}
 
-#meetings {
-    height: 500px;
+.meeting-imgs {
+    display: flex;
+    justify-content: center;
 }
 
 img {
@@ -128,36 +198,36 @@ a {
 }
 
 #contact {
-    height: 400px;
     margin-bottom: 15px;
 }
 
 @media screen and (min-width: 768px) {
+    .city-heading {
+    height: 80%;
+    }
     #batman-building {
         width: 20%;
         height: 70%;
     }
     #parthanon {
-        right: 2%;
-        width: 30%;
-        height: 25%;
-    }
-    .extra-buildings {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+        right: 0;
+        width: 35%;
+        height: 30%;
     }
     #ryman {
     position: absolute;
-    bottom: 0;
     left: 20%;
+    bottom: 0;
     width: 40%;
     height: 35%;
     background-color: teal;
     }
-    #extra-building1 {
-    background-color: black;
+    #welcome, #discord, #meetings, #contact {
+    padding-left: 15%;
+    padding-right: 15%;
+    }
+    .meeting-imgs img {
+        width: 30%;
+        height: auto;
     }
 }
