@@ -15,19 +15,31 @@ body, html {
 
 .header {
     position: absolute;
-    top: 5%;
+    top: 7%;
     right: 5%;
-    margin: 10px;
-    color: rgb(131, 119, 119);
-    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    color: rgb(237, 217, 217);
+    font-size: 8vw;
     font-weight: bolder;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px rgba(255, 233, 39, .5);
 }
 .city-heading {
-    background-color: rgb(13, 13, 99);
+    background-color: rgb(14, 14, 52);
     height: 60%;
+    z-index: -3;
 }
-
+.stars {
+  background: #0b0729 url(stars.png) repeat top center;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
 #discord-btn {
     position: absolute;
     right: 0;
@@ -44,7 +56,6 @@ body, html {
     font-weight: bold;
     font-size: 1em;
     color: white;
-    
 }
 
 #discord-btn:hover{
@@ -67,7 +78,7 @@ body, html {
 .left-base, .right-base {
     position: absolute;
     bottom: 0;
-    width: 25%;
+    width: 15%;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -76,33 +87,52 @@ body, html {
     background: var(--batman-color);
     border: 2px solid black;
 }
+
 .right-base {
-    right: 0;
+    right: 6%;
 }
 .left-base {
-    left: 0;
+    left: 6%;
 }
-/* .left-base::after,
+.left-base::after,
 .right-base::after {
     content: "";
     position: absolute;
     width: 0;
     height: 0;
     bottom: 100%;        
-    border-bottom: 40px solid #041732; 
-    border: 2px solid black;
-} */
-
+    border-bottom: calc(9vw) solid #041732; 
+} 
 .right-base::after {
     left: 0;
     border-left: 0;
-    border-right: 40px solid transparent; /* slope toward outside */
+    border-right: calc(6vw) solid transparent; /* slope toward outside */
 }
 
 .left-base::after {
     right: 0;
     border-right: 0;
-    border-left: 40px solid transparent; /* slope toward outside */
+    border-left: calc(6.5vw) solid transparent; /* slope toward outside */
+}
+.left-base::before,
+.right-base::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;        
+    border-bottom: calc(10vw) solid black; 
+} 
+.right-base::before {
+    left: 0;
+    border-left: 0;
+    border-right: calc(6.5vw) solid transparent; /* slope toward outside */
+}
+
+.left-base::before {
+    right: 0;
+    border-right: 0;
+    border-left: calc(6.5vw) solid transparent; /* slope toward outside */
 }
 
 .middle-base {
@@ -136,13 +166,13 @@ body, html {
 }
 
 .stripe-top1 {
-    left: 20.3%;
-    transform: rotate(-8deg);
+    left: 12.5%;
+    transform: rotate(-20deg);
 }
 
 .stripe-top2 {
-    right: 20.3%;
-    transform: rotate(8deg);
+    right: 12.5%;
+    transform: rotate(20deg);
 }
 .semi-circle {
     position: absolute;
@@ -158,7 +188,7 @@ body, html {
 }
 .window {
     position: relative;
-    width: 40%;
+    width: 20%;
     height: 25%;
     background-color: white;
     background: linear-gradient(to top, rgba(255, 255, 0, 0.3), rgba(255, 255, 255, .2)); 
@@ -186,7 +216,7 @@ body, html {
     bottom: 0;
     right:  2%;
     width: 55%;
-    height: 32%;
+    height: 40%;
 }
 .base1, .base2, .base3 {
     position: absolute;
@@ -354,8 +384,25 @@ a {
 #contact {
     margin-bottom: 15px;
 }
-
+@media screen and (min-width: 500px) {
+    #batman-building {
+        height: 60%;
+    }
+    #parthanon {
+        width: 40%;
+        height: 45%;
+    }
+}
+@media screen and (min-width: 600px){
+    #batman-building {
+        width: 40%;
+        height: 65%;
+    }
+}
 @media screen and (min-width: 768px) {
+    .header {
+        font-size: 5vw;
+    }
     #discord-btn {
         left: 0;
     }
@@ -369,7 +416,7 @@ a {
     #parthanon {
         right: 0;
         width: 35%;
-        height: 30%;
+        height: 40%;
     }
     #ryman {
     position: absolute;

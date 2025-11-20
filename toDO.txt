@@ -1,0 +1,9 @@
+
+
+-check sizes for batman and parthanon at
+
+DEFAULT 360px
+430px
+768px
+1280px
+1440px
